@@ -2,7 +2,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Empleado {
-    private static int ultimoId = 999;
+    private static int Id = 999;
     public int id;
     public String cedula;
     public String nombre;
@@ -17,7 +17,7 @@ public class Empleado {
 
 
     public Empleado(){
-        this.id = ++ultimoId;
+        this.id = ++Id;
         this.cedula="";
         this.nombre="";
         this.genero='F';
@@ -28,7 +28,7 @@ public class Empleado {
     }
 
     public Empleado(String cedula, String nombre, char genero, Date fecha_nacimiento, Date fecha_ingreso){
-        this.id = ++ultimoId;
+        this.id = ++Id;
         this.cedula=cedula;
         this.nombre=nombre;
         this.genero=genero;

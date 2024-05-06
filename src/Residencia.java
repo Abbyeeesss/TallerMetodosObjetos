@@ -1,16 +1,12 @@
 public class Residencia {
-    public String direccion;
+    private String direccion;
     private String ciudad;
     private int codigo_postal;
 
     private Residencia(String direccion, String ciudad, int codigo_postal) {
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.codigo_postal = codigo_postal;
-    }
-
-    public Residencia() {
-
+        setDireccion(direccion);
+        setCiudad(ciudad);
+        setCodigo_postal(codigo_postal);
     }
 
     public static Residencia createResidencia(String direccion, String ciudad, int codigo_postal) {
@@ -22,7 +18,7 @@ public class Residencia {
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        this.direccion = (direccion != null && !direccion.isEmpty()) ? direccion : this.direccion;
     }
 
     public String getCiudad() {
@@ -30,7 +26,7 @@ public class Residencia {
     }
 
     public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+        this.ciudad = (ciudad != null && !ciudad.isEmpty()) ? ciudad : this.ciudad;
     }
 
     public int getCodigo_postal() {
@@ -38,6 +34,6 @@ public class Residencia {
     }
 
     public void setCodigo_postal(int codigo_postal) {
-        this.codigo_postal = codigo_postal;
+        this.codigo_postal = (codigo_postal > 0) ? codigo_postal : this.codigo_postal;
     }
 }
